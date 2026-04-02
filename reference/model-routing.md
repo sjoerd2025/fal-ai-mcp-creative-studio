@@ -1,11 +1,12 @@
 # fal model routing
 
-This file is the quick decision matrix for choosing fal endpoints. Treat it as a strong default map, then verify live availability and schema with fal MCP because the catalog changes quickly.
+This file is the quick decision matrix for choosing fal endpoints. Treat it as a strong default map you can use directly when it clearly fits the request, then verify schema with fal MCP. Re-check live availability when the catalog may have changed or when you need a fallback.
 
 ## Selection rules
 
-- Use `recommend_model` when the user describes an outcome.
-- Use `search_models` when you need a category-specific scan or fallback.
+- Use the endpoint recommendations in this file directly when they clearly fit the task.
+- Use `recommend_model` when the user describes an outcome and this file does not already give a clear answer.
+- Use `search_models` when you need a category-specific scan, fallback, or newer option.
 - Use `get_model_schema` before execution.
 - Use `get_pricing` before premium runs or any batch workflow.
 
@@ -164,7 +165,9 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 ### Background removal
 
 - Endpoint: `pixelcut/background-removal`
-- Use for: product cutouts, stickers, transparent-background assets
+- Use for: default background removal, product cutouts, stickers, transparent-background assets
+- Fallback: `fal-ai/bria/background/remove`
+- Use fallback when: Pixelcut fails, edges are not acceptable, or the user is not happy with the result
 
 ## Voice and speech
 

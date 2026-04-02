@@ -46,8 +46,8 @@ Notes:
 
 ### Discovery
 
-- `recommend_model`: start here when the user describes an outcome, not a model.
-- `search_models`: use when you need category, endpoint, or fallback exploration.
+- `recommend_model`: use when the user describes an outcome and the skill does not already provide a clear recommended endpoint.
+- `search_models`: use when you need category, endpoint, or fallback exploration beyond the recommendations already documented in this skill.
 - `get_model_schema`: always use before first-time execution on a chosen endpoint.
 - `search_docs`: use for workflows, parameter explanations, examples, and edge cases.
 - `get_pricing`: check this before expensive video, audio, or premium image runs.
@@ -99,7 +99,7 @@ Choose the most relevant support file first, then come back to this file for exe
 ## Operating rules
 
 1. Start from the user's outcome, not the model name.
-2. Prefer `recommend_model` or `search_models` before hardcoding an endpoint.
+2. Use the recommended endpoints already documented in this skill when they clearly fit; call `recommend_model` or `search_models` only when the task is ambiguous, needs a fallback, or may require a newer option.
 3. Always call `get_model_schema` before first use of a model in a session.
 4. Call `get_pricing` for premium models or any task that may require retries.
 5. Prefer image-to-video when consistency matters; prefer text-to-video when ideating.
@@ -138,7 +138,7 @@ Use these rough modes unless the user specifies otherwise:
 
 Use this sequence:
 
-1. `recommend_model` or `search_models`
+1. choose a recommended endpoint from this skill, or call `recommend_model` or `search_models` if discovery is actually needed
 2. `get_pricing`
 3. `get_model_schema`
 4. `upload_file` if input assets are needed
@@ -163,7 +163,7 @@ When reporting back, include:
 
 ## Default task map
 
-Use live discovery first, but these are strong starting defaults.
+These are strong defaults. Use them directly when they clearly fit the task, and use live discovery only when you need a fallback, category scan, or a newer option.
 
 - General image generation default: `fal-ai/flux-2-flex`
 - Fast image generation drafts: `fal-ai/nano-banana-2`
@@ -183,7 +183,7 @@ Use live discovery first, but these are strong starting defaults.
 - Motion transfer: `fal-ai/kling-video/v3/pro/motion-control`
 - Physics-guided motion: `fal-ai/goal-force`
 - Upscaling: `fal-ai/seedvr/upscale/image`
-- Background removal: `pixelcut/background-removal`
+- Background removal: `pixelcut/background-removal`; if it fails or the user is not happy with the cutout, fall back to `fal-ai/bria/background/remove`
 - Low-cost expressive TTS: `xai/tts/v1`
 - Voice cloning: `fal-ai/lux-tts`
 

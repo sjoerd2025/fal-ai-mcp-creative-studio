@@ -38,8 +38,9 @@ Best for: ecommerce and product marketing
 
 1. create or edit the hero still
 2. remove background with `pixelcut/background-removal`
-3. upscale with `fal-ai/seedvr/upscale/image`
-4. optionally derive ad variants from the clean cutout or master still
+3. if Pixelcut fails or the cutout quality is not good enough, retry with `fal-ai/bria/background/remove`
+4. upscale with `fal-ai/seedvr/upscale/image`
+5. optionally derive ad variants from the clean cutout or master still
 
 ## Pipeline 4: still to cinematic video
 
@@ -133,7 +134,7 @@ That is useful for agents because you can report progress while the chain runs.
 
 ### Short still-image stack
 
-1. `recommend_model`
+1. choose the recommended endpoint from this skill, or call `recommend_model` if discovery is needed
 2. `get_model_schema`
 3. `run_model`
 4. optional utility step such as upscaling or background removal with another `run_model`
@@ -141,7 +142,7 @@ That is useful for agents because you can report progress while the chain runs.
 ### Video stack
 
 1. `upload_file` if source assets are needed
-2. `recommend_model`
+2. choose the recommended endpoint from this skill, or call `recommend_model` if discovery is needed
 3. `get_pricing`
 4. `get_model_schema`
 5. `submit_job`

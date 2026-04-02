@@ -19,7 +19,7 @@ This means prioritizing:
 ### Fast product concepting
 
 - Generate with `fal-ai/nano-banana-2`
-- Remove background with `pixelcut/background-removal` if needed
+- Remove background with `pixelcut/background-removal` if needed; if it fails or the cutout is not good enough, retry with `fal-ai/bria/background/remove`
 - Upscale with `fal-ai/seedvr/upscale/image`
 
 ### Premium hero asset
@@ -77,7 +77,8 @@ A glass skincare serum bottle on sculpted travertine forms, tight editorial stil
 
 1. generate or edit the product hero
 2. remove background with `pixelcut/background-removal`
-3. upscale with `fal-ai/seedvr/upscale/image`
+3. if Pixelcut fails or the result is not good enough, retry with `fal-ai/bria/background/remove`
+4. upscale with `fal-ai/seedvr/upscale/image`
 
 ### Campaign pipeline
 
