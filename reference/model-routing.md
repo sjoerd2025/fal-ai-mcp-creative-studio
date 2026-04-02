@@ -246,6 +246,8 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 ## Execution advice
 
 - Use `run_model` for still images, edits, background removal, and upscaling.
-- Use `submit_job` plus `check_job` for video.
+- Use `submit_job` plus `check_job` for video and other long-running jobs.
+- Wait between `check_job` calls instead of polling continuously; about 30 seconds is a good default for long-running jobs.
+- In Alter, prefer the `wait` tool when available, directly or through Flow, before polling again.
 - Upload source assets with `upload_file` instead of relying on local paths.
 - If a premium endpoint is unavailable or too expensive, fall back one tier rather than blocking the workflow.

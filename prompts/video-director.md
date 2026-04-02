@@ -18,7 +18,8 @@ If the user wants a story, compress it into a single beat or split it into multi
 - Premium first-to-last frame transitions: `fal-ai/veo3.1/first-last-frame-to-video`
 - Motion transfer: `fal-ai/kling-video/v3/pro/motion-control`
 
-Use `submit_job` plus `check_job` by default for video.
+Use `submit_job` plus `check_job` for video.
+Wait before polling again, typically about 30 seconds for long renders. In Alter, use the `wait` tool when available, directly or through Flow, before the next `check_job` call.
 
 ## Director framework
 

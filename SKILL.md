@@ -55,8 +55,8 @@ Notes:
 ### Execution
 
 - `run_model`: use for short jobs such as most image generation, image editing, background removal, upscaling, and some TTS.
-- `submit_job`: use for long-running jobs such as video, 3D, training, or anything likely to time out.
-- `check_job`: poll status, fetch results, or cancel when using async generation.
+- `submit_job`: use for long-running jobs such as video, 3D, training, or anything likely to time out. For video generation, always use `submit_job` instead of `run_model`.
+- `check_job`: poll status, fetch results, or cancel when using async generation. Do not call it in a tight loop; wait before polling again so the agent does not waste calls or fill context with redundant status checks.
 
 ### Utility
 
@@ -106,9 +106,11 @@ Choose the most relevant support file first, then come back to this file for exe
 6. For long narrative work, break a story into shots instead of asking one model for a full film.
 7. For edits, describe what must stay unchanged as clearly as what must change.
 8. For product work, optimize for legibility, composition control, and post-processing, not only style.
-9. Use `submit_job` plus `check_job` by default for video generation.
-10. If fal's catalog has changed, treat `reference/model-routing.md` as a starting point, then re-check live availability.
-11. Keep the recommended tool stack inside fal-supported models and MCP-accessible utilities unless the user explicitly asks for external tools.
+9. Use `submit_job` plus `check_job` for video generation and other long-running tasks.
+10. When polling async jobs, wait about 30 seconds between `check_job` calls unless the job is expected to finish sooner or the API returns a better cadence.
+11. If running in Alter, use the `wait` tool when available, directly or through Flow, before the next `check_job` call.
+12. If fal's catalog has changed, treat `reference/model-routing.md` as a starting point, then re-check live availability.
+13. Keep the recommended tool stack inside fal-supported models and MCP-accessible utilities unless the user explicitly asks for external tools.
 
 ## Default workflow
 
@@ -140,8 +142,9 @@ Use this sequence:
 2. `get_pricing`
 3. `get_model_schema`
 4. `upload_file` if input assets are needed
-5. `run_model` or `submit_job`
-6. `check_job` for async tasks
+5. `run_model` for short still-image, edit, utility, or lightweight audio tasks; `submit_job` for video and other long-running tasks
+6. wait before polling, ideally around 30 seconds for long-running jobs
+7. `check_job` for async tasks submitted with `submit_job`, then repeat the wait-plus-poll cycle as needed
 
 ### 4. Prompt properly
 

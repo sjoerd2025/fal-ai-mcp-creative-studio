@@ -9,7 +9,9 @@ fal supports both direct model execution and workflow-style chaining. For anythi
 - keep each stage simple and inspectable
 - only upgrade to a premium model once the concept is already working
 - use image generation as a stabilizing first step for consistent video
-- use `submit_job` plus `check_job` for long steps
+- use `submit_job` plus `check_job` for long steps, especially video generation
+- wait between polls instead of calling `check_job` repeatedly; around 30 seconds is a good default for long-running video jobs
+- in Alter, use the `wait` tool when available, directly or through Flow, before polling again
 - use `upload_file` for every user asset before execution
 
 ## Pipeline 1: fast concept to polished still
@@ -143,7 +145,8 @@ That is useful for agents because you can report progress while the chain runs.
 3. `get_pricing`
 4. `get_model_schema`
 5. `submit_job`
-6. `check_job` until result is ready
+6. wait about 30 seconds before polling
+7. `check_job`, then repeat the wait-plus-poll cycle until the result is ready
 
 ## Delivery pattern
 
