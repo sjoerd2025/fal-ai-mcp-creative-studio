@@ -31,7 +31,8 @@ This means prioritizing:
 
 ### Layout or poster-heavy campaign work
 
-- Generate with `fal-ai/qwen-image-2/pro/text-to-image`
+- Generate with `fal-ai/wan/v2.7/pro/text-to-image`
+- Use `fal-ai/wan/v2.7/text-to-image` for cheaper draft passes when the copy and layout still need iteration
 
 ## Prompt structure
 

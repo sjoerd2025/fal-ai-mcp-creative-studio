@@ -16,7 +16,7 @@ A comprehensive skill for using the fal MCP server to discover models, route cre
 - discovering models and choosing the right endpoint
 - checking schemas and pricing before generation
 - uploading assets and running image, video, and audio jobs
-- using better prompt patterns for models like Kling, Qwen Image 2, and Seedream
+- using better prompt patterns for models like Kling, Wan 2.7, Qwen Image 2, and Seedream
 - chaining multi-step workflows like product cutouts, poster generation, still-to-video, and multishot cinematic sequences
 
 ## Project principles

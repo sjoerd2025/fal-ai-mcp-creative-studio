@@ -32,9 +32,15 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 
 ### Typography and poster work
 
+- Endpoints: `fal-ai/wan/v2.7/pro/text-to-image`, `fal-ai/wan/v2.7/text-to-image`
+- Use for: posters, title cards, infographics, PPT-like slides, layouts with readable text, multilingual text-in-image, dense copy blocks, and other text-heavy design work
+- Tradeoff: prefer Wan over Nano Banana when readable text is central; use `pro` for final delivery and the non-pro route for lower-cost drafts or fallback runs
+
+### Text-aware alternate
+
 - Endpoint: `fal-ai/qwen-image-2/pro/text-to-image`
-- Use for: posters, title cards, infographics, PPT-like slides, layouts with readable text, multilingual text-in-image, and text-aware campaign work
-- Tradeoff: powerful but polarizing; use when text rendering or built-in style understanding matters more than a neutral default
+- Use for: fallback text-aware generation, multilingual layouts, packaging, and cases where Qwen's style handling is the better fit
+- Tradeoff: strong specialist alternate, but not the primary default for dense poster or slide workflows in this skill
 
 ### Brand-forward visual design
 
@@ -70,9 +76,15 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 
 ### Text and typography edits
 
+- Endpoints: `fal-ai/wan/v2.7/pro/edit`, `fal-ai/wan/v2.7/edit`
+- Use for: text replacement, poster updates, slide copy changes, local typography-aware edits, and preserving font/layout intent
+- Tradeoff: prefer Wan when text fidelity is the main risk; use `pro` for final artwork changes and the non-pro edit route for lighter revisions or fallback runs
+
+### Text edit alternate
+
 - Endpoint: `fal-ai/qwen-image-2/pro/edit`
-- Use for: text replacement, poster updates, local typography-aware changes, and preserving font/layout intent
-- Tradeoff: stronger as a specialist editor than as a neutral general-purpose edit default
+- Use for: fallback text-aware editing, multilingual copy changes, and specialist poster revisions when Wan is not the best fit
+- Tradeoff: useful alternate specialist route, but not the default text-edit path in this skill
 
 ### Realism-first commercial editing alternate
 
@@ -202,16 +214,17 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 ### "I need a final hero visual"
 
 - Start with `fal-ai/nano-banana-pro` or `fal-ai/flux-2-flex` depending on whether polish or control matters more
-- Escalate to `fal-ai/recraft/v4/pro/text-to-image` or `fal-ai/qwen-image-2/pro/text-to-image` when typography or design polish matters
+- Escalate to `fal-ai/recraft/v4/pro/text-to-image` or `fal-ai/wan/v2.7/pro/text-to-image` when typography or design polish matters
 
 ### "I need a poster, slide, infographic, or text-heavy layout"
 
-- Start with `fal-ai/qwen-image-2/pro/text-to-image`
+- Start with `fal-ai/wan/v2.7/pro/text-to-image`
+- Fall back to `fal-ai/wan/v2.7/text-to-image` when cost or speed matters more than the final pass
 - Use exact quoted copy, explicit module placement, and layout hierarchy
 
 ### "I need multilingual text rendered inside the image"
 
-- Start with `fal-ai/qwen-image-2/pro/text-to-image`
+- Start with `fal-ai/wan/v2.7/pro/text-to-image`
 - Keep each language literal and specify where each text block appears
 
 ### "Make this still move"
@@ -225,7 +238,8 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 
 ### "I need text replacement, signage edits, or poster copy changes"
 
-- Start with `fal-ai/qwen-image-2/pro/edit`
+- Start with `fal-ai/wan/v2.7/pro/edit`
+- Fall back to `fal-ai/wan/v2.7/edit` for lighter-cost edit passes
 - Use exact quoted replacement text and preserve font, alignment, color, and perspective unless the user wants them changed
 
 ### "I need a product asset for commerce"
@@ -244,6 +258,7 @@ This file is the quick decision matrix for choosing fal endpoints. Treat it as a
 
 - Start with the Flux family for image tasks
 - Use Nano Banana as a specialist edit or reference-heavy option, not the only default
+- Use Wan 2.7 for dense text-heavy image generation or poster-style editing
 - Use Kling for value-heavy premium video and Veo for high-control premium transitions or reference-conditioned video
 
 ## Execution advice

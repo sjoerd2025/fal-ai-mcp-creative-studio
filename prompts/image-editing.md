@@ -13,7 +13,7 @@ The most common failure in image editing is asking for a change without protecti
 - General edits and continuity work: `fal-ai/flux-pro/kontext`
 - Contextual micro-edits and multi-reference changes: `fal-ai/nano-banana-2/edit`, `fal-ai/nano-banana-pro/edit`
 - Structured mask-driven editing: `bria/fibo-edit/edit`
-- Poster and typography updates: `fal-ai/qwen-image-2/pro/edit`
+- Poster and typography updates: `fal-ai/wan/v2.7/pro/edit`, `fal-ai/wan/v2.7/edit`
 - Realism-heavy alternate edits: `fal-ai/bytedance/seedream/v4.5/edit`, `fal-ai/bytedance/seedream/v5/lite/edit`
 
 ## Editing prompt structure
@@ -78,8 +78,16 @@ When identity or product consistency matters:
 - use them when combining references, making tiny changes, or preserving identity through direct edit language
 - do not make them your only fallback for safety-sensitive fashion or real-person edits
 
+### For `fal-ai/wan/v2.7/pro/edit` and `fal-ai/wan/v2.7/edit`
+
+- use terse literal edit prompts
+- quote the exact replacement copy
+- explicitly preserve font, alignment, size, color, and perspective when needed
+- prefer `pro` for final poster, slide, or signage revisions
+
 ### For `fal-ai/qwen-image-2/pro/edit`
 
+- use as a text-aware alternate when Wan is unavailable or not the best fit
 - use terse text-edit prompts
 - quote the exact replacement copy
 - explicitly preserve font, alignment, weight, and color when needed

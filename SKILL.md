@@ -89,6 +89,7 @@ Choose the most relevant support file first, then come back to this file for exe
 - Story-first video, cinematic prompting, shot design: `prompts/video-director.md`
 - Longer narrative planning and shot breakdowns: `prompts/storyboard-shot-planner.md`
 - Seedream-specific prompting and commercial layouts: `prompts/seedream-5-lite.md`
+- Wan 2.7 text-heavy layout and poster prompting: `prompts/wan-2.7.md`
 - Qwen Image 2 text, layout, and edit prompting: `prompts/qwen-image-2.md`
 - Kling-specific cinematic and dialogue prompting: `prompts/kling-3.md`
 - Voice, narration, cloned voices, spoken assets: `prompts/voice-audio.md`
@@ -168,11 +169,11 @@ These are strong defaults. Use them directly when they clearly fit the task, and
 - General image generation default: `fal-ai/flux-2-flex`
 - Fast image generation drafts: `fal-ai/nano-banana-2`
 - Premium image generation or polished hero stills: `fal-ai/nano-banana-pro`
-- Typography-heavy images, posters, PPT-like slides, infographics, and multilingual text-in-image: `fal-ai/qwen-image-2/pro/text-to-image`
+- Typography-heavy images, posters, PPT-like slides, infographics, and multilingual text-in-image: `fal-ai/wan/v2.7/pro/text-to-image` or `fal-ai/wan/v2.7/text-to-image`
 - Design-led brand graphics and layout-heavy ads: `fal-ai/recraft/v4/pro/text-to-image`
 - General image editing default: `fal-ai/flux-pro/kontext`
 - Tiny contextual edits or multi-reference identity-preserving edits: `fal-ai/nano-banana-2/edit` or `fal-ai/nano-banana-pro/edit`
-- Text replacement and typography-aware editing: `fal-ai/qwen-image-2/pro/edit`
+- Text replacement and typography-aware editing: `fal-ai/wan/v2.7/pro/edit` or `fal-ai/wan/v2.7/edit`
 - Realism-first commercial image-editing alternate: `fal-ai/bytedance/seedream/v4.5/edit` or `fal-ai/bytedance/seedream/v5/lite/edit`
 - Structured image editing with masks or JSON: `bria/fibo-edit/edit`
 - Fast local or open-style text-to-video iteration: `fal-ai/ltx-2.3/text-to-video/fast`
@@ -219,13 +220,13 @@ Do not assume every model responds best to the same prompt style.
 
 - For FLUX family, prefer `subject -> action -> style -> context`.
 - For Seedream, prefer `subject -> setting -> style -> lighting -> technical`.
-- For Nano Banana and Qwen Edit, keep edit prompts short and imperative.
+- For Nano Banana, Wan 2.7, and Qwen Edit, keep edit prompts short and imperative.
 - For Kling, think in shots and write scene directions.
 - For Veo and LTX, layer camera, action, atmosphere, timing, and audio cues.
 - For text-heavy or color-accurate assets, use quoted text, explicit placement, and HEX colors when supported.
 
 Read `reference/model-specific-prompting.md` before prompting a specialist model.
-If the chosen model is Seedream, Qwen, or Kling, also read the dedicated guide in `prompts/seedream-5-lite.md`, `prompts/qwen-image-2.md`, or `prompts/kling-3.md`.
+If the chosen model is Seedream, Wan, Qwen, or Kling, also read the dedicated guide in `prompts/seedream-5-lite.md`, `prompts/wan-2.7.md`, `prompts/qwen-image-2.md`, or `prompts/kling-3.md`.
 
 ## Prompting standards
 

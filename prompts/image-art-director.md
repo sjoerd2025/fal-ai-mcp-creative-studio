@@ -120,8 +120,15 @@ A premium stainless steel travel mug standing on a pale limestone plinth, three-
 - Give richer scene context and composition intent.
 - Use when you already know the direction.
 
+### For `fal-ai/wan/v2.7/pro/text-to-image` and `fal-ai/wan/v2.7/text-to-image`
+
+- Use literal quoted copy and explicit placement.
+- Define the hierarchy by region: title, subtitle, modules, CTA, footer.
+- Use it when visible text, poster layout, slides, or presentation structure is part of the deliverable.
+
 ### For `fal-ai/qwen-image-2/pro/text-to-image`
 
+- Use as a text-aware alternate when Wan is unavailable or Qwen is the better stylistic fit.
 - Call out text zones, poster layout, or typography needs clearly.
 - State whether you want room for copy or actual visible text.
 

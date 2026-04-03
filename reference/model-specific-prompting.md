@@ -93,9 +93,28 @@ Use Nano Banana for contextual edits, multi-reference composition, product consi
 - community reports stronger safety friction in some fashion, skin, or real-person cases
 - do not rely on it as the only fallback for sensitive edits
 
+## Wan 2.7
+
+Use Wan 2.7 when readable visible text, posters, presentation slides, infographics, or text-aware edits are central to the output.
+
+### Best practices
+
+- use exact quoted text
+- describe placement region by region
+- define hierarchy explicitly: headline, subhead, modules, CTA, footer
+- for edits, preserve font, alignment, size, color, and perspective when they matter
+- use `pro` endpoints for final delivery and non-pro endpoints for draft passes or fallback runs
+
+### Good fit
+
+- posters and presentation slides
+- dense text-heavy marketing assets
+- multilingual layouts
+- text replacement and copy updates
+
 ## Qwen Image and Qwen Image Edit
 
-Use Qwen when typography, text rendering, nuanced style understanding, or precise text edits matter.
+Use Qwen as a text-aware alternate when Wan 2.7 is unavailable or when Qwen's style understanding is the better fit.
 
 Read `prompts/qwen-image-2.md` for the dedicated Qwen Image 2 playbook based on the official Qwen blog.
 
@@ -104,7 +123,7 @@ Read `prompts/qwen-image-2.md` for the dedicated Qwen Image 2 playbook based on 
 - use exact quoted text
 - use named styles or art movements when style fidelity matters
 - keep edit prompts terse when changing only text or one local detail
-- use it for posters, title cards, packaging, and text-bearing creative assets
+- use it for posters, title cards, packaging, and text-bearing creative assets when Wan is unavailable or not the best fit
 
 ### Example edit phrasing
 

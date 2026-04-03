@@ -28,9 +28,9 @@ Best for: concept art, ad roughs, quick creative exploration
 
 Best for: title cards, launch art, ad posters, typography-sensitive images
 
-1. concept still with `fal-ai/nano-banana-2` or `fal-ai/nano-banana-pro`
-2. final poster-oriented render with `fal-ai/qwen-image-2/pro/text-to-image`
-3. if layout or local changes are needed, refine with `fal-ai/qwen-image-2/pro/edit` or `fal-ai/flux-pro/kontext`
+1. concept still with `fal-ai/wan/v2.7/text-to-image` when the text is already known, or `fal-ai/nano-banana-2` when only the visual direction is being explored
+2. final poster-oriented render with `fal-ai/wan/v2.7/pro/text-to-image`
+3. if layout or local changes are needed, refine with `fal-ai/wan/v2.7/pro/edit`, `fal-ai/wan/v2.7/edit`, or `fal-ai/flux-pro/kontext`
 
 ## Pipeline 3: product asset stack
 

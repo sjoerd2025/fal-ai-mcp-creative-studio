@@ -2,6 +2,8 @@
 
 Use this guide when routing to Qwen Image 2 endpoints such as `fal-ai/qwen-image-2/pro/text-to-image`, `fal-ai/qwen-image-2/text-to-image`, `fal-ai/qwen-image-2/pro/edit`, and `fal-ai/qwen-image-2/edit`.
 
+Routing note: in this skill, prefer Wan 2.7 for dense text-heavy posters, slides, presentations, infographics, and text-aware edit workflows. Use Qwen when Wan is unavailable or when Qwen is the better stylistic fit.
+
 This guide is grounded in the official Qwen blog and official Qwen materials, especially:
 
 - `https://qwen.ai/blog?id=qwen-image-2.0`
@@ -75,7 +77,7 @@ Useful descriptors:
 
 ## Layout-first prompting
 
-Qwen is a strong choice for posters, PPT-like slides, storefronts, signage, infographics, and other text-heavy assets.
+Qwen remains a strong fallback or alternate choice for posters, PPT-like slides, storefronts, signage, infographics, and other text-heavy assets.
 
 When layout matters, structure the prompt by regions or modules.
 
@@ -164,9 +166,9 @@ Edit the input poster: replace the main headline with "SUMMER DROP" and keep the
 
 ## When to choose Qwen over other models
 
-- choose Qwen over Flux when text rendering and layout control are central to the task
+- choose Qwen over Flux when text rendering and layout control are central and Wan is not the better fit for the task
 - choose Qwen over Recraft when you want text-heavy or multilingual assets with stronger literal copy rendering
-- choose Qwen over Nano Banana for text replacement, poster editing, slide generation, or infographic-like layouts
+- choose Qwen over Nano Banana when you need text replacement, poster editing, slide generation, or infographic-like layouts and are not using Wan 2.7
 
 ## What to avoid
 
